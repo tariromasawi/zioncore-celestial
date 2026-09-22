@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#050711">
-<meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com https://archive.org; img-src 'self' data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com https://archive.org https://api.x.ai; img-src 'self' data:;">
 <title>ZIONCORE MATRIX · CELESTIAL COMMAND CORE</title>
 <link rel="stylesheet" href="css/matrix.css">
 <link rel="icon" href="assets/favicon.svg">
@@ -14,18 +13,12 @@
 <canvas id="stars" aria-hidden="true"></canvas>
 <div class="app">
 <header>
-  <div class="brand">
-    <div class="emblem" aria-hidden="true">✦</div>
-    <div>
-      <h1>ZIONCORE · MATRIX</h1>
-      <small>CELESTIAL COMMAND CORE · OMNIRESTORE</small>
-    </div>
-  </div>
+  <div class="brand"><div class="emblem">✦</div><div><h1>ZIONCORE · MATRIX</h1><small>CELESTIAL COMMAND CORE · OMNIRESTORE</small></div></div>
   <div class="status"><i class="dot"></i><span id="systemState">LOCAL CORE</span></div>
 </header>
 <div class="grid">
 <aside class="sidebar">
-  <nav class="nav" aria-label="Matrix planes">
+  <nav class="nav">
     <button class="active" data-view="command">Command</button>
     <button data-view="identity">Identity</button>
     <button data-view="discovery">Discovery</button>
@@ -37,75 +30,28 @@
     <button data-view="integrity">Integrity</button>
     <button data-view="jobs">Workers</button>
     <button data-view="audit">Audit</button>
+    <button data-view="counsel">Counsel</button>
     <button data-view="settings">System</button>
   </nav>
-  <p class="sidebar-foot"><b>Mwari ndi Mwari</b><br>Planes are software layers, not verified dimensions.</p>
+  <p class="sidebar-foot"><b>Mwari ndi Mwari</b></p>
 </aside>
 <main>
-<section id="view-command">
-  <div class="panel hero">
-    <div class="kicker">DIGITAL CONTINUITY • DISCOVERY • PRESERVATION • RESTORATION</div>
-    <h2>Celestial Command Core</h2>
-    <p>SAINT Tariro Masawi THE ANOINTED COMMANDER · House of Masawi. Local-first. No fabricated scans.</p>
-    <div class="command">
-      <input id="commandInput" aria-label="Command" placeholder="STATUS  ·  DISCOVER GITHUB  ·  HASH  ·  EXPORT  ·  HELP">
-      <button class="btn primary" id="runBtn">EXECUTE</button>
-    </div>
-    <div class="metrics">
-      <div class="metric"><b id="mRecords">0</b><span>Records</span></div>
-      <div class="metric"><b id="mEvidence">0</b><span>Evidence</span></div>
-      <div class="metric"><b id="mJobs">0</b><span>Jobs</span></div>
-      <div class="metric"><b id="mConnectors">0</b><span>Connectors</span></div>
-    </div>
-  </div>
-  <div class="panel section" id="offlineBanner" hidden>OFFLINE MODE — local functions only.</div>
-  <div class="panel section console" id="console" aria-live="polite"></div>
-</section>
-<section id="view-identity" class="hidden">
-  <div class="panel section">
-    <h3>Identity Core</h3>
-    <input id="identityName" placeholder="Display name">
-    <textarea id="identityAliases" placeholder="Aliases, domains, usernames, URLs — one per line"></textarea>
-    <button class="btn primary" id="createCase">CREATE IDENTITY CASE</button>
-    <div id="caseList"></div>
-  </div>
-</section>
-<section id="view-discovery" class="hidden">
-  <div class="panel section">
-    <h3>Discovery Fabric</h3>
-    <input id="ghUser" value="tariromasawi" aria-label="GitHub username">
-    <button class="btn primary" id="discoverGh">DISCOVER GITHUB</button>
-    <input id="webUrl" placeholder="https://example.com">
-    <button class="btn" id="discoverWeb">RECORD URL</button>
-    <input id="archiveUrl" placeholder="https://example.com Wayback">
-    <button class="btn" id="discoverArchive">CHECK ARCHIVE</button>
-    <div id="connectorCards" class="cards"></div>
-  </div>
-</section>
-<section id="view-records" class="hidden">
-  <div class="panel section">
-    <div class="sphere-wrap"><canvas id="sphere"></canvas><div class="overlay"><div class="readout">REAL DATA ONLY</div><div class="readout" id="sphereReadout">NODES: 0</div></div></div>
-    <div class="records" id="recordList"></div>
-  </div>
-</section>
-<section id="view-vault" class="hidden">
-  <div class="panel section">
-    <textarea id="hashInput" placeholder="Paste text to hash"></textarea>
-    <button class="btn primary" id="hashBtn">CALCULATE SHA-256</button>
-    <div class="console" id="hashOutput"></div>
-  </div>
-</section>
-<section id="view-restoration" class="hidden"><div class="panel section"><p>DISCOVER → VERIFY → PRESERVE → USER REVIEW → ACTION. No magical recovery.</p></div></section>
+<section id="view-command"><div class="panel hero"><div class="kicker">COUNSEL · DISCOVERY · PRESERVATION</div><h2>Celestial Command Core</h2><p>Speak with ZionCore in Counsel. Local chair always on. Grok optional.</p><div class="command"><input id="commandInput" placeholder="STATUS · DISCOVER GITHUB · HELP"><button class="btn primary" id="runBtn">EXECUTE</button></div><div class="metrics"><div class="metric"><b id="mRecords">0</b><span>Records</span></div><div class="metric"><b id="mEvidence">0</b><span>Evidence</span></div><div class="metric"><b id="mJobs">0</b><span>Jobs</span></div><div class="metric"><b id="mConnectors">0</b><span>Connectors</span></div></div></div><div class="panel section console" id="console"></div></section>
+<section id="view-identity" class="hidden"><div class="panel section"><input id="identityName" placeholder="Display name"><textarea id="identityAliases"></textarea><button class="btn primary" id="createCase">CREATE IDENTITY CASE</button><div id="caseList"></div></div></section>
+<section id="view-discovery" class="hidden"><div class="panel section"><input id="ghUser" value="tariromasawi"><button class="btn primary" id="discoverGh">DISCOVER GITHUB</button><input id="webUrl" placeholder="https://example.com"><button class="btn" id="discoverWeb">RECORD URL</button><input id="archiveUrl" placeholder="Wayback URL"><button class="btn" id="discoverArchive">CHECK ARCHIVE</button><div id="connectorCards" class="cards"></div></div></section>
+<section id="view-records" class="hidden"><div class="panel section"><div class="sphere-wrap"><canvas id="sphere"></canvas><div class="overlay"><div class="readout">REAL DATA ONLY</div><div class="readout" id="sphereReadout">NODES: 0</div></div></div><div class="records" id="recordList"></div></div></section>
+<section id="view-vault" class="hidden"><div class="panel section"><textarea id="hashInput"></textarea><button class="btn primary" id="hashBtn">CALCULATE SHA-256</button><div class="console" id="hashOutput"></div></div></section>
+<section id="view-restoration" class="hidden"><div class="panel section"><p>FOUND → VERIFY → PRESERVE → USER REVIEW. No magical recovery.</p></div></section>
 <section id="view-continuity" class="hidden"><div class="panel section"><button class="btn" id="snapBtn">EXPORT SNAPSHOT</button><input type="file" id="importFile" accept=".json"></div></section>
 <section id="view-connectors" class="hidden"><div class="panel section" id="connectorList"></div></section>
 <section id="view-integrity" class="hidden"><div class="panel section cards"><div class="card"><h4>SHA-256</h4><p id="cryptoSHA"></p></div><div class="card"><h4>WebCrypto</h4><p id="cryptoWeb"></p></div><div class="card"><h4>Storage</h4><p id="cryptoStorage"></p></div><div class="card"><h4>Network</h4><p id="onlineStatus"></p></div></div></section>
 <section id="view-jobs" class="hidden"><div class="panel section" id="jobList"></div></section>
 <section id="view-audit" class="hidden"><div class="panel section console" id="auditConsole"></div></section>
-<section id="view-settings" class="hidden"><div class="panel section"><p>No secrets in this page.</p><button class="btn danger" id="resetBtn">RESET LOCAL MATRIX</button></div></section>
-</main>
+<section id="view-counsel" class="hidden"><div class="panel section"><h3>ZionCore Counsel</h3><p>Type or press SPEAK. Local chair is on. Attach Grok in System if you have an xAI key.</p><p id="counselMode">MODE: LOCAL_COUNSEL</p><div class="console" id="counselLog" style="min-height:220px"></div><div class="command"><input id="counselInput" placeholder="Ask ZionCore…"><button class="btn primary" id="counselSend">SEND</button><button class="btn" id="counselSpeak">SPEAK</button></div></div></section>
+<section id="view-settings" class="hidden"><div class="panel section"><h4>Grok / xAI</h4><input id="xaiKey" type="password" placeholder="xAI API key — this browser only"><input id="xaiEndpoint" placeholder="Worker URL /api/counsel"><button class="btn" id="saveGrok">SAVE GROK BRIDGE</button><p id="grokStatus">Grok: not configured</p><button class="btn danger" id="resetBtn">RESET LOCAL MATRIX</button></div></section>
+</main></div>
+<footer>MATRIX · ZIONCORE · OMNIRESTORE · MWARI NDI MWARI</footer>
 </div>
-<footer>MATRIX · ZIONCORE · OMNIRESTORE · MWARI NDI MWARI<br>© SAINT TARIRO MASAWI THE ANOINTED COMMANDER</footer>
-</div>
+<script src="js/counsel.js"></script>
 <script src="js/app.js"></script>
-</body>
-</html>
+</body></html>
